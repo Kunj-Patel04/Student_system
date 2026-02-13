@@ -14,7 +14,7 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
-    @PostMapping("/st")
+    @PostMapping()
     public Student addstd(@RequestBody Student student ){
         studentService.addStudent(student);
         return student;

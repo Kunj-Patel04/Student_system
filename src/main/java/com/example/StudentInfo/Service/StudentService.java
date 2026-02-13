@@ -46,9 +46,10 @@ public class StudentService {
         if(repository.existsById(id)){
                 Student s = repository.findById(id).orElseThrow(() -> new RuntimeException("Error"));
 
-//            student.setAge(7);
-//            student.setName("rohit");
-            //repository.save(student);
+            s.setAge(student.getAge());
+            s.setName(student.getName());
+            s.setEmail(student.getEmail());
+            repository.save(student);
             return "user updated    "+s;
         }
         else{
